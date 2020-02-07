@@ -1,0 +1,16 @@
+version: '2.3'
+services:
+  mxnet-gpu:
+    stdin_open: true
+    tty: true
+    command: /bin/bash
+    build: .
+    container_name: mxnet-gpu
+    volumes:
+      - ./:/usr/src/app
+      - /data:/data
+    runtime: nvidia
+    ports:
+      - 7777:7777
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
