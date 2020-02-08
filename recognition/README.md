@@ -14,6 +14,25 @@ Parallel calculation by simple matrix partition. Setting: ResNet 50, batch size 
 
 **Note:** Replace ``train.py`` with ``train_parall.py`` in following examples if you want to use parallel acceleration.
 
+### setup
+1. run docker container
+``` in `insightface`
+docker-compose up -d
+```
+
+2. install pipenv
+```
+docker attach mxnet-gpu
+pipenv install --system
+```
+
+### dataset
+ - vggFace2  
+   - can use for commerce  
+   - (9K ids/3.31M images)  
+http://www.robots.ox.ac.uk/~vgg/data/vgg_face2/
+
+
 ### Model Training
 
 1. Install `MXNet` with GPU support (Python 2.7).
@@ -52,6 +71,11 @@ vim config.py # edit dataset path etc..
 ```
 
 We give some examples below. Our experiments were conducted on the Tesla P40 GPU.
+
+(0). Train ArcFace with MobileFacenet
+```
+sh mobileface_arc.sh
+```
 
 (1). Train ArcFace with LResNet100E-IR.
 
