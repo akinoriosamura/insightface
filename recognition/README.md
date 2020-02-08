@@ -15,12 +15,13 @@ Parallel calculation by simple matrix partition. Setting: ResNet 50, batch size 
 **Note:** Replace ``train.py`` with ``train_parall.py`` in following examples if you want to use parallel acceleration.
 
 ### setup
-1. run docker container
-``` in `insightface`
+1. run docker container  
+``` 
+in insightface
 docker-compose up -d
 ```
 
-2. install pipenv
+2. install pipenv  
 ```
 docker attach mxnet-gpu
 pipenv install --system
